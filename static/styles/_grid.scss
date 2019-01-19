@@ -1,0 +1,85 @@
+.grid-wrap {
+
+}
+.grid-col-wrap {
+  display: flex;
+  overflow: auto;
+}
+.grid-col {
+  margin-right: $colMargin;
+  flex-shrink: 0;
+  width: $gridWidth;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  &:last-child {
+    margin-right: 0;
+  }
+  &:first-child {
+    .participant-block:before {
+      display: none;
+    }
+  }
+}
+.grid-brick {
+  position: relative;
+  margin-bottom: $brickMargin;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: $verticalLineWidth;
+    top: $verticalGutter;
+    bottom: $verticalGutter;
+    background: linear-gradient(to bottom, $lineColor 50%, $lineColor 50%);
+  }
+  &:after {
+    right: -$horizontalLineWidth;
+  }
+  &.win-one:after {
+    background: linear-gradient(to bottom, $lineColorWinner 50%, $lineColor 50%);
+  }
+  &.win-two:after {
+    background: linear-gradient(to bottom, $lineColor 50%, $lineColorWinner 50%);
+  }
+}
+.participant-block {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: $participantHeight;
+  padding: $participantPadding;
+  font-size: $nickSize;
+  color: $nickColor;
+  border: $borderWidth solid $bordeColor;
+  margin-bottom: $participantMargin;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:before,&:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    width: $horizontalLineWidth;
+    height: $horizontalLineHeight;
+    background: $lineColor;
+  }
+  &:before {
+    display: none;
+    left: -$horizontalLineWidth;
+  }
+  &:after {
+    right: -$horizontalLineWidth;
+  }
+  &.win {
+    &:before {
+      display: block;
+    }
+    &:before,&:after {
+      background: $lineColorWinner;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+// colors
+$bordeColor: #120e1c;
+$nick: #6db3ff;
+
+
+
+
+// sizes
+$brickMargin: 25px;
+$gridWidth: 200px;
+$colMargin: 40px;
+$borderWidth: 1px;
+$participantPadding: 0 12px;
+$participantHeight: 30px;
+$participantMargin: 4px;
+$horizontalLineWidth: ($colMargin/2 + 1);
+$horizontalLineHeight: 2px;
+
+$horizontalMargin: $horizontalLineWidth/2;
+$verticalLineWidth: $horizontalLineHeight;
+$verticalGutter: ($participantHeight/2);
+
+$lineColor: #7a7d7c;
+$lineColorWinner: #35a9f6;
+$nickSize: 14px;
+$nickColor: blue;
